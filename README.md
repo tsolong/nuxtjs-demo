@@ -76,17 +76,7 @@ cd pages
     }
 
     let params = getQueryParams({
-        provinceid: '1',
-        province: '1',
-        provincename: '上海',
-        tradername: 'yw_app',
-        trader: 'h5',
-        closesignature: 'yes',
-        signature_method: 'md5',
-        timestamp: '1593247103157',
-        signature: '****',
-        siteid: '9',
-        itemId: '972419',
+        ...data
     });
 
     import axios from 'axios';
@@ -100,7 +90,7 @@ cd pages
         },
         async asyncData() {
             let productName = '';
-            await axios.post('https://gateway.fangkuaiyi.com/product/v1/product/getProductBaseInfo', params)
+            await axios.post('https://www.abc.com/', params)
                 .then((res) => {
                     productName = res.data.data.product_info.productName;
                 })
